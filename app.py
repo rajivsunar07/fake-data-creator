@@ -58,6 +58,3 @@ def upload_file():
         return f"Error processing file: {e}"
 
     return send_file(output_csv, as_attachment=True)
-
-if __name__ == '__main__':
-    app.run(debug=True)
