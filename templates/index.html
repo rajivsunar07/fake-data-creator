@@ -4,12 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DDL to CSV Converter</title>
+    <style>
+        /* Reset margin and padding for a cleaner slate */
+        body, h1, form {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Set a smooth gradient background */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            color: #333;
+        }
+
+        /* Center container box */
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        /* Heading styles */
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #5a5a5a;
+        }
+
+        /* Style file input and button */
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            font-size: 1rem;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 15px;
+        }
+
+        label:hover {
+            background-color: #45a049;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer links */
+        footer {
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Upload a DDL File</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="file" accept=".sql,.ddl" required>
-        <button type="submit">Convert to CSV</button>
-    </form>
+  
+    <div class="container">
+        <h1>DDL to CSV Converter</h1>
+       
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <label for="fileInput">Choose File</label>
+            <input type="file" id="fileInput" name="file" accept=".sql,.ddl" required>
+            <br>
+            <button type="submit" name="format" value="parquet">Convert to Parquet</button>
+            <button type="submit" name="format" value="json">Convert to JSON</button>
+            <button type="submit" name="format" value="csv">Convert to CSV</button>
+        </form>
+            
+        <footer>
+            <p>Designed by <a href="#">Your Name</a></p>
+        </footer>
+    </div>
 </body>
 </html>
