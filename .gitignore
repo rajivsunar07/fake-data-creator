@@ -1,0 +1,6 @@
+Pipfile
+.DS_Store
+.env
+python-env
+__pycache__/
+test.sql
